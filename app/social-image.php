@@ -1,13 +1,8 @@
 <?php
 /**
- *
- * @link              https://lukin.me/meta-image
- * @since             1.0
- *
- * @wordpress-plugin
  * Plugin Name:       Social Image
  * Description:       Create social sharing image for Facebook, VK.com, Telegram and other social networks
- * Version:           1.0
+ * Version:           2.0
  * Plugin URI:        https://github.com/antonlukin/social-image
  * Author:            Anton Lukin
  * Author URI:        https://lukin.me

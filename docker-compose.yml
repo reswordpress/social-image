@@ -1,0 +1,32 @@
+version: '3'
+services:
+  database:
+    image: mysql:5.7
+    volumes:
+        - social_image_db:/var/lib/mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: wordpress
+    networks:
+      - back
+
+  wordpress:
+    depends_on:
+      - database
+    image: wordpress:4.9.6
+    restart: always
+    volumes:
+      - ./app:/var/www/html/wp-content/plugins/social-image
+    environment:
+      WORDPRESS_DB_HOST: database:3306
+      WORDPRESS_DB_PASSWORD: wordpress
+    ports:
+      - 80:80
+    networks:
+      - back
+
+volumes:
+  social_image_db:
+
+networks:
+  back:
