@@ -1,6 +1,6 @@
 <div id="social-image-metabox" data-ajaxurl='<?php echo admin_url('admin-ajax.php') ?>' data-post="<?php echo get_the_ID() ?>">
 	<?php
-		$preview = get_post_meta(get_the_ID(), 'social-image', true);
+		$preview = get_post_meta(get_the_ID(), '_social-image', true);
 		$options = get_post_meta(get_the_ID(), '_social-image-options', true);
 
 		$options = unserialize($options);
@@ -16,8 +16,6 @@
 
 	<div class="social-image__showcase">
 		<div class="social-image__showcase-error" id="social-image-error"></div>
-
-		<button class="button" id="social-image-library"><?php _e('Choose from library', 'social-image') ?></button>
 
 		<p class="social-image__showcase-preview" id="social-image-preview">
 			<img class="social-image__showcase-image" id="social-image-src" src="<?php echo $preview; ?>" />

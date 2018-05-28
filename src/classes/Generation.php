@@ -33,7 +33,7 @@ class Generation {
 				'brightness' => $p['brightness']
 			];
 
-			update_post_meta($p['post'], 'social-image', $url);
+			update_post_meta($p['post'], '_social-image', $url);
  			update_post_meta($p['post'], '_social-image-options', serialize($options));
 
 			wp_send_json_success($url);
@@ -137,10 +137,10 @@ class Generation {
 			'url' => $_POST['url']
 		];
 
-		if(get_post_meta($p['post'], 'social-image', true) === $p['url'])
+		if(get_post_meta($p['post'], '_social-image', true) === $p['url'])
  			wp_send_json_success($p['url']);
 
-		if(update_post_meta($p['post'], 'social-image', $p['url']))
+		if(update_post_meta($p['post'], '_social-image', $p['url']))
 			wp_send_json_success($p['url']);
 
 		wp_send_json_error(__('Cannot update meta', 'social-image'));
